@@ -14,10 +14,6 @@ public static class CustomStyles
     GUI.Box(rect, title, style);
   }
 
-  public static void DrawHeader(Rect rect, string title, GUIStyle style)
-  {
-  }
-
   public static bool DrawToggle(string title, bool display, GUIStyle style)
   {
     var header = GUILayoutUtility.GetRect(0f, 24f, style);
