@@ -9,6 +9,7 @@ public class BezierCurve : ScriptableObject
   static void CreateAsset()
   {
     var asset = CreateInstance<BezierCurve>();
+    asset.AddPointAt(Vector3.zero);
     UnityEditor.ProjectWindowUtil.CreateAsset(asset, "BezierCurve.asset");
   }
 

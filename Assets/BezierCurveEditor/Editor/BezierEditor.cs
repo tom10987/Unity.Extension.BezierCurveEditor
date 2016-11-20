@@ -24,7 +24,7 @@ public class BezierEditor
     resolution = serializedObject.FindProperty("_resolution");
     color = serializedObject.FindProperty("_lineColor");
     close = serializedObject.FindProperty("_closeSpline");
-    
+
     var points = serializedObject.FindProperty("_points");
     orderList = new ReorderableList(serializedObject, points);
 
@@ -52,6 +52,13 @@ public class BezierEditor
     {
       curve.selected = list.index;
       SceneView.RepaintAll();
+    };
+
+    orderList.onAddCallback = (list) =>
+    {
+      curve.AddPointAt(Vector3.zero);
+      list.index = curve.count - 1;
+      EditorUtility.SetDirty(curve);
     };
   }
 }
